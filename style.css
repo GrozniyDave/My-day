@@ -1,0 +1,251 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: 3em 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-areas:
+    "customize customize customize date date"
+    "customize customize customize weather time"
+    ". filter filter filter ."
+    ". table table table ."
+    ". table table table ."
+    ". table table table ."
+    ". table table table ."
+    ". table table table ."
+    ". table table table .";
+  margin: 2rem auto;
+}
+.sectionName {
+  height: 40px;
+  padding: 5px;
+  border-left: 1px black solid;
+  animation: rotate-center 3s ease-in-out 2s infinite alternate-reverse forwards;
+}
+
+.customize {
+  grid-area: customize;
+}
+
+.table {
+  grid-area: table;
+}
+
+.date {
+  grid-area: date;
+}
+
+.weather {
+  grid-area: weather;
+}
+
+.time {
+  grid-area: time;
+}
+.filter {
+  grid-area: filter;
+}
+.customize {
+  grid-area: customize;
+  margin: 5px 20px;
+}
+
+.time {
+  grid-area: time;
+}
+
+.weather {
+  grid-area: weather;
+}
+
+.date {
+  color: black;
+  font-weight: bold;
+  top: 0;
+  right: 45%;
+  position: fixed;
+  background-color: #a89797;
+  border-radius: 5px;
+  padding: 5px;
+}
+.inspo {
+  text-align: center;
+}
+.inspoMsg {
+  max-width: 50vh;
+}
+.table {
+  grid-area: table;
+  margin: 0 auto;
+}
+
+td,
+th {
+  border: 1px solid #000000;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+tr:nth-child(odd) {
+  background-color: #a89797;
+}
+th {
+  background-color: #dddddd;
+}
+#s1,
+#r1,
+#r2,
+#r3,
+#r4,
+#r5 {
+  margin: 0 auto;
+  padding: 10px;
+}
+#r1 {
+  background-color: #c1c29d;
+}
+#r2 {
+  background-color: #edd382;
+}
+#r3 {
+  background-color: #fc9e4f;
+}
+#r4 {
+  background-color: #f4442e;
+}
+#r5 {
+  background-color: #ffe66d;
+}
+.titleChange {
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+}
+
+.titleChange label {
+  margin: 5px 10px 5px 0;
+}
+
+.titleChange input {
+  vertical-align: middle;
+  margin: 5px 10px 5px 0;
+  padding: 10px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+}
+
+.titleChange button {
+  padding: 10px 20px;
+  background-color: rgb(0, 0, 0);
+  color: white;
+  cursor: pointer;
+  border: none;
+}
+
+.titleChange button:hover {
+  background-color: rgb(55, 55, 56);
+}
+
+@media (max-width: 800px) {
+  .titleChange input {
+    margin: 10px 0;
+  }
+}
+.container {
+  width: 500px;
+  height: 300px;
+  margin: 25vh auto;
+  border-radius: 25px;
+  box-shadow: 0 20px 40px 0px rgba(0, 0, 0, 0.3);
+}
+
+.header {
+  height: 20%;
+  background-color: #ff9800;
+  border-top-left-radius: 25px;
+  border-top-right-radius: 25px;
+  text-align: center;
+  position: relative;
+}
+#temp,
+#humidity-div {
+  text-align: center;
+  font-weight: bold;
+  font-size: 1.5rem;
+}
+.time {
+  font-weight: bold;
+  font-size: 60px;
+  color: rgb(0, 0, 0);
+}
+
+.city-icon-holder {
+  text-align: center;
+}
+
+#city-name {
+  font-size: 30px;
+  font-weight: bold;
+  color: rgb(0, 0, 0);
+}
+
+#icon {
+  max-width: 50px;
+}
+
+.city-icon {
+  border-bottom-left-radius: 25px;
+}
+
+.humidity {
+  border-bottom-right-radius: 25px;
+}
+
+#s1,
+#textInput {
+  padding: 9px;
+  background: #ffffff;
+  cursor: pointer;
+  animation: pulse 2s infinite;
+}
+#s1:hover,
+#textInput:hover {
+  animation: none;
+}
+
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(204, 169, 44, 0.4);
+  }
+  70% {
+    box-shadow: 0 0 0 10px rgba(204, 169, 44, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(204, 169, 44, 0);
+  }
+}
+
+@keyframes rotate-center {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(1deg);
+  }
+}
+@media only screen and (max-width: 1200px) {
+  .grid-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    margin: 2rem auto;
+  }
+}

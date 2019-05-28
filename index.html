@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="style.css" />
+    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+    <title>My day</title>
+  </head>
+  <body>
+    <div class="grid-container">
+      <div class="customize">
+        </form>
+        <p class="pageTitle"></p>
+        <h2 class="sectionName">Customize section</h2>
+        <form class="titleChange" autocomplete="off">
+            <label for="title">Page Title:</label>
+            <input type="text" name="titleChange" id="textInput" placeholder="New title" class="inputSelector">
+            <button type="submit" class="btnSubmit" onclick="changeTitle()">Change Title</button>
+          </form>
+          <label for="title">Color scheme:</label>
+          <select id=s1 onchange="colorChange(this.value);">
+              <option id="r0" onclick="cha(this.value);"value="ffffff">Default</option>
+              <option id="r1" onclick="cha(this.value);" value="f2f3ae"><p>Vanilla</p></option>
+              <option id="r2" onclick="cha(this.value);" value="EDD382"><p>Flax</p></option>
+              <option id="r3" onclick="cha(this.value);" value="FC9E4F"><p>Neon Carrot</p></option>
+              <option id="r4" onclick="cha(this.value);" value="F4442E"><p>Vermilion</p></option>
+              <option id="r5" onclick="cha(this.value);" value="FFE66D"><p>Maize</p></option>
+          <select>
+    </div>
+    <h2 class="sectionName">Today section</h2>
+      <div class="time"></div>
+      <div class="weather">
+        <div class="city-icon">
+          <div class="city-icon-holder">
+          <div id="city-name"></div>
+          <img src="" alt="" id="icon">
+            </div>
+        </div>
+        <div id="temp"></div>
+        <div class="temperature"></div>
+        <div class="humidity">
+          <div id="humidity-div"></div>
+        </div></div>
+      <div class="date"></div>
+      <div class="filter">
+      </div>
+      <div class="table">
+          <div id="tabTasks" class="tabcontent">
+        <table id="list">
+          <h2 class="sectionName">Table</h2>
+          <div class="inspo">
+            <h3 class="inspoMsg">msg goes here</h3>
+          </div>
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Day</th>
+              <th>Time</th>
+              <th>Description</th>
+            </tr>
+          </thead>
+<tbody>
+<!-- tasks template will be copied and inserted here -->
+</tbody>
+<template id="tasks">
+      <tr>
+        <td data-field="id">id</td>
+        <td data-field="day">day</td>
+        <td data-field="time">time</td>
+        <td data-field="desc">description</td>
+      </tr>
+    </template>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
