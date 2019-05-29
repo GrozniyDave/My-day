@@ -12,12 +12,15 @@
     <div class="grid-container">
       <div class="customize">
         </form>
-        <p class="pageTitle"></p>
-        <h2 class="sectionName">Customize section</h2>
+        <div class="custSect">
+            <p class="pageTitle"></p>
+        <h2 class="sectionName">Customization</h2>
         <form class="titleChange" autocomplete="off">
+          <div class="inpBtn">
             <label for="title">Page Title:</label>
             <input type="text" name="titleChange" id="textInput" placeholder="New title" class="inputSelector">
             <button type="submit" class="btnSubmit" onclick="changeTitle()">Change Title</button>
+          </div>
           </form>
           <label for="title">Color scheme:</label>
           <select id=s1 onchange="colorChange(this.value);">
@@ -28,8 +31,8 @@
               <option id="r4" onclick="cha(this.value);" value="F4442E"><p>Vermilion</p></option>
               <option id="r5" onclick="cha(this.value);" value="FFE66D"><p>Maize</p></option>
           <select>
+            </div>
     </div>
-    <h2 class="sectionName">Today section</h2>
       <div class="time"></div>
       <div class="weather">
         <div class="city-icon">
@@ -42,14 +45,13 @@
         <div class="temperature"></div>
         <div class="humidity">
           <div id="humidity-div"></div>
-        </div></div>
-      <div class="date"></div>
-      <div class="filter">
+        </div>
       </div>
+      <div class="date"></div>
+    
       <div class="table">
-          <div id="tabTasks" class="tabcontent">
-        <table id="list">
-          <h2 class="sectionName">Table</h2>
+        <table id="list" cellpadding="0" cellspacing="0" >
+          <div class="tableSec">
           <div class="inspo">
             <h3 class="inspoMsg">msg goes here</h3>
           </div>
@@ -58,7 +60,7 @@
               <th>ID</th>
               <th>Day</th>
               <th>Time</th>
-              <th>Description</th>
+              <th>Task</th>
             </tr>
           </thead>
 <tbody>
@@ -72,6 +74,10 @@
         <td data-field="desc">description</td>
       </tr>
     </template>
+  </div>
+</div>
+    
+    </div>
     </div>
     <script src="script.js"></script>
   </body>

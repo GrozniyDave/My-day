@@ -1,5 +1,5 @@
 * {
-  margin: 0;
+  margin: 0 auto;
   padding: 0;
   box-sizing: border-box;
   font-family: "Roboto", sans-serif;
@@ -7,29 +7,23 @@
 
 .grid-container {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-  grid-template-rows: 3em 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: 3.5em 1fr 1fr1fr 1fr 1fr;
   grid-template-areas:
-    "customize customize customize date date"
-    "customize customize customize weather time"
-    ". filter filter filter ."
-    ". table table table ."
-    ". table table table ."
-    ". table table table ."
-    ". table table table ."
-    ". table table table ."
-    ". table table table .";
-  margin: 2rem auto;
-}
-.sectionName {
-  height: 40px;
-  padding: 5px;
-  border-left: 1px black solid;
-  animation: rotate-center 3s ease-in-out 2s infinite alternate-reverse forwards;
+    ". . date date date . ."
+    ". . time . weather . ."
+    ". . customize customize customize . ."
+    ". table table table table table ."
+    ". table table table table table ."
+    ". table table table table table .";
 }
 
-.customize {
-  grid-area: customize;
+.time {
+  grid-area: time;
+}
+
+.weather {
+  grid-area: weather;
 }
 
 .table {
@@ -40,39 +34,15 @@
   grid-area: date;
 }
 
-.weather {
-  grid-area: weather;
-}
-
-.time {
-  grid-area: time;
-}
-.filter {
-  grid-area: filter;
-}
 .customize {
   grid-area: customize;
-  margin: 5px 20px;
 }
-
-.time {
-  grid-area: time;
-}
-
-.weather {
-  grid-area: weather;
-}
-
-.date {
-  color: black;
-  font-weight: bold;
-  top: 0;
-  right: 45%;
-  position: fixed;
-  background-color: #a89797;
-  border-radius: 5px;
+.sectionName {
+  height: 40px;
   padding: 5px;
+  animation: rotate-center 3s ease-in-out 2s infinite alternate-reverse forwards;
 }
+
 .inspo {
   text-align: center;
 }
@@ -83,23 +53,40 @@
   grid-area: table;
   margin: 0 auto;
 }
+.inpBtn {
+  display: block;
+}
 
 td,
-th {
-  border: 1px solid #000000;
+th,
+table {
   text-align: left;
   padding: 8px;
-}
-
-tr:nth-child(even) {
-  background-color: #dddddd;
-}
-tr:nth-child(odd) {
-  background-color: #a89797;
+  border-bottom: 1px solid black;
+  border-collapse: collapse;
+  width: 100%;
+  table-layout: fixed;
 }
 th {
-  background-color: #dddddd;
+  padding: 20px 15px;
+  text-align: left;
+  font-weight: 500;
+  font-size: 18px;
+  color: black;
+  text-transform: uppercase;
+  background-color: rgba(31, 11, 11, 0.3);
+  overflow: hidden;
 }
+td {
+  padding: 15px;
+  text-align: left;
+  vertical-align: middle;
+  font-weight: 300;
+  font-size: 14px;
+  color: black;
+  border-bottom: solid 1px rgba(31, 11, 11, 0.3);
+}
+
 #s1,
 #r1,
 #r2,
@@ -244,8 +231,49 @@ th {
 @media only screen and (max-width: 1200px) {
   .grid-container {
     display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: auto;
-    margin: 2rem auto;
+    grid-template-columns: 1fr 2fr 1fr;
+    grid-template-rows: 8em 10em 20em 1fr;
+    grid-template-areas:
+      ". time ."
+      ". weather ."
+      ". customize ."
+      ". table .";
   }
+
+  .date {
+    grid-area: date;
+    position: fixed;
+    background-color: black;
+    color: white;
+    padding: 3px;
+    top: 0;
+    right: 0;
+  }
+
+  .weather {
+    grid-area: weather;
+    margin-top: 5px;
+  }
+
+  .customize {
+    grid-area: customize;
+    margin: 20px 20px auto;
+    padding: 5px;
+  }
+
+  .table {
+    grid-area: table;
+  }
+
+  .time {
+    grid-area: time;
+    margin-top: 10px;
+  }
+}
+
+.custSect {
+  margin: 5px;
+}
+.todaySect {
+  margin: 5px;
 }
